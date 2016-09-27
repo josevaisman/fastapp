@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.liveo.ndrawer" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+		<application
+		android:name=".facebooklogin.Application"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/myTheme" >
+		
+		<activity
+            android:name=".ui.activity.OnboardingWithCenterAnimationActivity"
+            android:theme="@style/AppThemeSplash.CenterAnimation">
+			<intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+		
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:theme="@style/nLiveoDrawer"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".ui.activity.SettingsActivity"
+            android:label="@string/settings">
+        </activity>
+		
+		<activity 
+			android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" >
+		</activity>
+		
+		<activity 
+			android:name=".ui.activity.Map1Activity" 
+			android:theme="@style/NoActionBar">
+		</activity>
+		
+		<activity 
+			android:name=".ui.activity.Map2Activity" 
+			android:theme="@style/NoActionBar">
+		</activity>
+		
+		<meta-data 
+			android:name="com.facebook.sdk.ApplicationId" 
+			android:value="@string/facebook_app_id">
+		</meta-data>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version">
+		</meta-data>
+		
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBuptxIJ5t0ukwTjpdU5Nqln0KwTDYsi7E">
+		</meta-data>
+		
+    </application>
+
+</manifest>
