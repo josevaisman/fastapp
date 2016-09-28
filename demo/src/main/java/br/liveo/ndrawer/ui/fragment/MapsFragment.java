@@ -34,7 +34,6 @@ import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 
 import br.liveo.ndrawer.ui.activity.Map1Activity;
-import br.liveo.ndrawer.ui.activity.Map2Activity;
 
 import br.liveo.ndrawer.R;
 
@@ -64,13 +63,6 @@ public class MapsFragment extends Fragment {
 				@Override
 				public void onClick(View v) {
 					startActivity(new Intent(getActivity(), Map1Activity.class));
-				}
-			});
-
-		rootView.findViewById(R.id.card2).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					startActivity(new Intent(getActivity(), Map2Activity.class));
 				}
 			});
 		return rootView;		
