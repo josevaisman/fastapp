@@ -1,18 +1,4 @@
-/*
- * Copyright 2015 Rudson Lima
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 package br.liveo.ndrawer.ui.activity;
 
 import android.content.Intent;
@@ -35,6 +21,8 @@ import br.liveo.ndrawer.ui.fragment.MapsFragment;
 import br.liveo.ndrawer.ui.fragment.MainFragment;
 import br.liveo.ndrawer.ui.fragment.ViewPagerFragment;
 import android.content.res.*;
+
+import com.google.android.gms.maps.*;
 
 public class MainActivity extends NavigationLiveo implements OnItemClickListener {
 
@@ -74,8 +62,8 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
         mHelpLiveo.add(getString(R.string.sent_mail), R.drawable.ic_send_black_24dp);
         mHelpLiveo.add(getString(R.string.drafts), R.drawable.ic_drafts_black_24dp);
         mHelpLiveo.addSeparator(); //Item separator
-		mHelpLiveo.add(getString(R.string.maps), R.drawable.ic_map);//ic_map_marker_multiple
-        mHelpLiveo.add(getString(R.string.trash), R.drawable.ic_delete_black_24dp);
+		mHelpLiveo.add(getString(R.string.maps), R.drawable.ic_map);
+		mHelpLiveo.add(getString(R.string.trash), R.drawable.ic_delete_black_24dp);
         mHelpLiveo.addNoCheck(getString(R.string.spam), R.drawable.ic_report_black_24dp, 120);//no check
 
         //{optional} - Header Customization - method customHeader
@@ -142,7 +130,6 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
 				
 			case 6:
 				mFragment = MapsFragment.newInstance(mHelpLiveo.get(position).getName());
-			
                 break;
 				
             default:
@@ -178,5 +165,6 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
             closeDrawer();
         }
     };
+
 }
 
