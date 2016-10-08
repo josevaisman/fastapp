@@ -1537,8 +1537,8 @@ public abstract class NavigationLiveo extends AppCompatActivity {
     public void onBackPressed() {
 
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mRelativeDrawer);
-        if (drawerOpen) {
-            mDrawerLayout.closeDrawer(mRelativeDrawer);
+        if (!drawerOpen) {
+            mDrawerLayout.openDrawer(mRelativeDrawer);
         } else {
             super.onBackPressed();
         }
